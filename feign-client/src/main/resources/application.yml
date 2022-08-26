@@ -1,0 +1,26 @@
+server:
+  port: 8001
+#  servlet:
+#    context-path: cloud
+
+spring:
+  application:
+    name: feign-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    platform: mysql
+    username: root
+    password: admin
+    url: jdbc:mysql://192.168.242.134:3306/CloudMusic?useUnicode=true&characterEncoding=utf8&autoReconnect=true&allowMultiQueries=true&useSSL=false&serverTimezone=Asia/Shanghai
+    type: com.alibaba.druid.pool.DruidDataSource
+
+mybatis-plus:
+    mapper-locations: classpath*:mapper/*.xml
+
+ribbon:
+  ReadTimeout: 5000 #请求连接的超时时间
+  ConnectionTimeout: 10000  #请求响应的超时时间，默认是1秒
